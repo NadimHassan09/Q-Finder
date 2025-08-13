@@ -1,916 +1,277 @@
-/* font-import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-/* font-import - End */
-
-
-
-
-/* Reset - Start */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    text-decoration: none;
-
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark-1: #111827;
+    --color-dark-2: #242A38;
+    --color-dark-3: #333D4C;
+    --color-dark-4: #343D4A;
+    --color-dark-5: #1D2735;
+    --color-dark-6: #251E2B;
+    --color-gray-1: #cdccce;
+    --color-gray-2: #cdced0;
+    --color-gray-3: #959CA7;
+    --color-gray-4: #9CA3AF;
+    --color-gray-5: #4E5562;
+    --color-gray-6: #343A47;
+    --color-gray-border: rgb(74, 74, 74);
+    --color-primary: #d85151;
+    --color-primary-dark: #C92D2D;
+    --color-accent-1: #3D7A81;
+    --color-yellow: yellow;
+    --color-star: #FC9231;
+    --color-hover-dark: #3F4856;
 }
-/* Reset - End */
 
-
-
-
-
-/* Body - Start */
-body{
-    width: 100vw;
-}
-/* Body - End */
-
-
-/* logo - Start */
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
 .logo span {
-    font-size: 40px;
-    font-weight: bolder;
-    color: white;
+    color: var(--color-white);
 }
-.logo h2{
-    color: white;
+.logo h2 {
+    color: var(--color-white);
 }
-/* logo - End */
-
-
-
-/* Header - Start */
-header{
-    width: 100%;
-    background-color: #111827;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 12px 0;
-    position: sticky;
-    top: 0;
+header {
+    background-color: var(--color-dark-1);
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
 }
-
-/* Nav Bar - Start */
-header nav{}
-header nav ul{
-    /* background-color: red; */
-    list-style: none;
-    display: flex;
+header nav ul li a {
+    color: var(--color-gray-1);
 }
-header nav ul li{}
-header nav ul li a{
-    text-decoration: none;
-    color: #cdccce;
-    padding: 10px 20px;
+header nav ul li a:hover {
+    background-color: var(--color-dark-2);
+    color: var(--color-white);
 }
-header nav ul li a span{
-    font-size: 20px;
+header .btns button {
+    background-color: var(--color-dark-1);
 }
-header nav ul li a i{
-    margin-left: 5px;
+header .btns button i {
+    color: var(--color-white);
 }
-header nav ul li a:hover{
-    background-color: #242A38;
-    color: white;
-    border-radius: 10px;
+header .btns a {
+    color: var(--color-white);
 }
-/* Nav Bar - End */
-
-/* Buttons - Start */
-header .btns{}
-header .btns button{
-    background-color: #111827;
-    border: none;
-    padding: 0 10px;
+header .btns a.joinPro {
+    background-color: var(--color-primary);
 }
-header .btns button i{
-    color: white;
-    transition: transform 0.3s ease;
+header .btns a.joinPro:hover {
+    background-color: var(--color-primary-dark);
 }
-header .btns button i:hover{
-    transform: rotate(45deg) scale(1.5);
+main section.hero {
+    background-color: var(--color-accent-1);
 }
-header .btns a{
-    color: white;
-    padding: 0 10px;
+main section.hero h1 {
+    color: var(--color-white);
 }
-header .btns a span{}
-header .btns a i{
-    margin-right: 5px;
-    transition: transform 0.3s ease;
-}
-header .btns a>i:hover{
-    transform: scale(1.5);
-}
-
-header .btns a.joinPro{
-    background-color: #d85151;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-header .btns a.joinPro:hover{
-    background-color: #C92D2D;
-}
-header .btns a.joinPro:hover i{
-    animation: quick-scale 0.3s ease forwards;
-}
-@keyframes quick-scale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Buttons - End */
-/* Header - End */
-
-/* Main - Start */
-main{
-    width: 100%;
-}
-main section{}
-/* hero start */
-main section.hero{
-    background-color: #3D7A81;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-}
-main section.hero h1{
-    font-size: 56px;
-    color: white;
-    width: 50%;
-    text-align: center;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-}
-main section.hero form{
-    width: 60%;
-    background-color: white;
-    padding: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    border-radius: 10px;
+main section.hero form {
+    background-color: var(--color-white);
 }
 main section.hero form div {
-    background-color: yellow;
-    position: relative;
+    background-color: var(--color-yellow);
 }
-main section.hero form div i{
-    position: absolute;
-    top: 35%;
-    left: 10px;
+main section.hero form > input {
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
-main section.hero form input{
-    padding: 20px 50px;
-    outline: none;
-    border: none;
+main section.hero form > input:hover {
+    background-color: var(--color-primary-dark);
 }
-main section.hero form div.searchBar{
-    flex-grow: 5;
+main section.hero .popularSearch a {
+    color: var(--color-white);
+    border: var(--color-white) 1px solid;
 }
-main section.hero form div.searchBar input{width: 100%;}
-main section.hero form div.locationBar{
-    flex-grow: 3;
-    flex-basis: 20%;
+main section.hero .popularSearch a:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
-main section.hero form div.locationBar input{width: 100%;}
-main section.hero form > input{
-    flex-basis: 10%;
-    flex-grow: 2;
-    background-color: #d85151;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: white;
+.secHeader {
+    color: var(--color-white);
 }
-main section.hero form > input:hover{
-    background-color: #C92D2D;
-    cursor: pointer;
+.secHeader a {
+    color: var(--color-white);
 }
-main section.hero .popularSearch{
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-main section.hero .popularSearch a{
-    color: white;
-    border: white 1px solid;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 10px 0px;
-    flex-grow: 1;
-    text-align: center;
-}
-main section.hero .popularSearch a:hover{
-    background-color: white;
-    color: black;
-}
-
-/* hero end */
-
-
-
-
-
-/* section - header */
-.secHeader{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px 0;
-    color: white;
-}
-.secHeader h2{
-    font-size: 32px;
-}
-.secHeader a{
-    color: white;
-}
-.secHeader a i{
-    margin-left: 5px;
-}
-/* section - header - End */
-
-
-
-/* Page Content */
-main section.pageContent{
-    width: 100%;
-    background-color: #111827;
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-main section.pageContent .secHeader{
-    /* background-color: aqua; */
-}
-main section.pageContent .secContent{
-    /* background-color: #cdccce; */
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    margin: 0 auto;
-}
-main section.pageContent .secContent .item{
-    /* background-color: red; */
-    margin: 10px;
+main section.pageContent {
+    background-color: var(--color-dark-1);
 }
 main section.pageContent .secContent .item a {
-    display: flex;
-    color: white;
-    align-items: center;
-    gap: 10px;
-}
-main section.pageContent .secContent .item a:hover{
-    text-decoration: underline;
-}
-main section.pageContent .secContent .item a:hover .icon{
-    transform: scale(1.1);
-}
-main section.pageContent .secContent .item a:hover .icon i{
-    text-decoration: none;
-}
-main section.pageContent .secContent .item a .icon{
-    font-size: 24px;
-    background-color: #333D4C;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-/*page content - End */
-
-/* popular projects */
-main section.popularProjects{
-    width: 100%;
-    background-color: #111827;
-    display: flex;
-    justify-content: space-between;
-    padding: 50px 40px;
-
-}
-main section.popularProjects .banner{
-    background-color: #1D2735;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
-main section.popularProjects .banner .text{
-    padding: 40px;
-}
-main section.popularProjects .banner .text h3{
-    margin-bottom: 5px;
-    font-size: 32px;
-    color: white;
-}
-main section.popularProjects .banner .text p{
-    color: #959CA7;
-}
-main section.popularProjects .banner .text h3 a{
-    color: white;
-    text-decoration: none;
-}
-main section.popularProjects .banner .image{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #343D4A;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 40px 0;
-}
-main section.popularProjects .banner .image img{
-    width: 90%;
-    position: relative;
-    left: 60px;
-}
-main section.popularProjects .projectGrid{
-    /* background-color: aqua; */
-    width: 65%;
-}
-main section.popularProjects .projectGrid .secContent{
-    display: grid;
-    grid-template-columns: 1FR 1FR;
-    gap: 40px;
-}
-main section.popularProjects .projectGrid .secContent .project a{
-    /* background-color: #C92D2D; */
-    display: flex;
-    gap: 20px;
-}
-main section.popularProjects .projectGrid .secContent .project a:hover .projectText h3{
-    text-decoration: underline;
-}
-main section.popularProjects .projectGrid .secContent .project a .projectImage{
-    width: 112px;
-    height: 80px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-main section.popularProjects .projectGrid .secContent .project a .projectImage img{
-    width: 112px;
-    transition: transform 0.5s ease;
-}
-main section.popularProjects .projectGrid .secContent .project a .projectImage img:hover{
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
-}
-main section.popularProjects .projectGrid .secContent .project a .projectText{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    color: white;
-}
-.fa-star{
-    color: #FC9231;
-}
-/* popular projects end */
-
-/* popular home projects */
-main section.popularHomeProjects{
-    width: 100%;
-    background-color: #111827;
-    padding: 50px 40px;
-}
-main section.popularHomeProjects .secContent{
-    width: 100%;
-    display: flex;
-    /* background-color: aqua; */
-    justify-content: space-between;
-    flex-wrap: wrap;
-   
-}
-main section.popularHomeProjects .secContent .project{
-    width: calc(100% / 3 - 15px);
-    overflow: hidden;
-    background-color: #111827;
-    border-radius: 10px;
-    border: rgb(74, 74, 74) 1px solid;
-}
-main section.popularHomeProjects .secContent .project a{}
-main section.popularHomeProjects .secContent .project a .poster{
-    width: 100%;
-}
-main section.popularHomeProjects .secContent .project a .poster h3{
-    position: relative;
-    top: -45px;
-    left: 20px;
-    font-size: 20px;
-    color: white;
-    
-}
-main section.popularHomeProjects .secContent .project a .poster .imageWrapper{
-    width: 100%;
-     position: relative;
-    display: inline-block;
-    overflow: hidden;
-}
-main section.popularHomeProjects .secContent .project a .poster .imageWrapper::after{
-   content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
-  pointer-events: none;
-  display: block;
-  width: 100%;
-  height: auto;
-}
-main section.popularHomeProjects .secContent .project a .poster .imageWrapper img{
-    display: block;
-    width: 100%;
-    transition: transform 0.5s ease;
-
-}  
-main section.popularHomeProjects .secContent .project a .poster .imageWrapper img:hover{
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
-
-}
-
-main section.popularHomeProjects .secContent .project a .text{
-    display: flex;
-    padding: 0 20px 20px 20px;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-}
-main section.popularHomeProjects .secContent .project a .text .ratingAndPrice{
-    display: flex;
-    gap: 10px;
-}
-main section.popularHomeProjects .secContent .project a .text button{
-    padding: 10px 20px;
-    background-color: #111827;
-    border: white 1px solid;
-    border-radius: 10px;
-    color: white;
-}
-main section.popularHomeProjects .secContent .project a .text button:hover{
-    background-color: white;
-    color: black;
-    cursor: pointer;
-}
-/* popular home projects end */
-
-/* Experts Advice */
-main section.expertAdvice{
-    width: 100%;
-    background-color: #1D2735;
-    padding: 50px 40px;
-}
-main section.expertAdvice .secContent{
-    /* background-color: red; */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-main section.expertAdvice .secContent article{
-    /* background-color: aqua; */
-    display: flex;
-    gap: 20px;
-}
-main section.expertAdvice .secContent article .text{
-    width: 65%;
-    height: 225px;
-}
-main section.expertAdvice .secContent article .text a{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    color: white;
-    /* background-color: #FC9231; */
-}
-main section.expertAdvice .secContent article .text a .tag{
-    background-color: #333D4C;
-    width: 35%;
-    text-align: center;
-    padding: 5px 0;
-    font-size: 12px;
-    border-radius: 5px;
-}
-main section.expertAdvice .secContent article .text a h3{
-    font-size: 20px;
-}
-main section.expertAdvice .secContent article .text a:hover h3{
-    text-decoration: underline;
-} 
-
-main section.expertAdvice .secContent article .image{}
-main section.expertAdvice .secContent article .image img{
-    border-radius: 10px;
-    width: 130px;
-    height: 150px;
-}
-
-/* How It Works */
-
-main section.howItWorks{
-    width: 100%;
-    background-color: #111827;
-    padding: 50px 40px;
-}
-main section.howItWorks .heading{
-}
-main section.howItWorks .heading h2{
-    color: white;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-main section.howItWorks .heading p{
-    color: #cdced0;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-main section.howItWorks .articles{
-    display: grid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-main section.howItWorks .articles article{
-
-    color: white;
-    flex-grow: 1;
-}
-main section.howItWorks .articles article .image{}
-main section.howItWorks .articles article .image svg{
-    width: 48px;
-    height: 48px;
-}
-main section.howItWorks .articles article .tex{
-
-}
-main section.howItWorks .articles article .tex h3{
-    margin-bottom: 10px;
-}
-main section.howItWorks .articles article .tex p{
-    color: #cdced0;
-    font-size: 14px;
-}
-
-/* Become a Pro */
-main section.becomeAPro{
-    width: 100%;
-    display: flex;
-}
-main section.becomeAPro .left{
-    background-color: #3D7A81;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-
-}
-main section.becomeAPro .left h2{
-    width: 60%;
-    font-size: 32px;
-    color: white;}
-main section.becomeAPro .left .btns{
-    /* width: 60%;
-    background-color: #C92D2D;
-    display: flex;
-    gap: 20px;
-    justify-content: space-between; */
-}
-a.addBusiness{
-    background-color: #d85151;
-    padding: 11px 21px;
-    border-radius: 5px;
-    color: white;
-    margin-right: 10px;
-}
-a.addBusiness i{
-    margin-right: 5px;
-    transition: transform 0.3s ease;
-}
-a.addBusiness:hover{
-    background-color: #C92D2D;
-}
-a.addBusiness:hover i{
-    animation: quick-scale-btn 0.3s ease forwards;
-}
-@keyframes quick-scale-btn {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-a.learnMore{
-    color: white;
-    border: white 1px solid;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 10px 0px;
-    flex-grow: 1;
-    text-align: center;
-}
-a.learnMore:hover{
-    background-color: white;
-    color: black;
-}
-main section.becomeAPro .right{
-    width: 50%;
-}
-main section.becomeAPro .right img{
-    width: 100%;
-    height: 100%;
-}
-/*Get Finder App*/
-
-main section.getApp{
-    background-color: #111827;
-    width: 100%;
-    display: flex;
-    padding: 80px 0;
-    justify-content: center;
-    align-items: center;
-
-}
-main section.getApp .adWrapper{
-    background-color: #251E2B;
-    width: 90%;
-    border-radius: 10px;
-    display: flex;
-}
-main section.getApp .adWrapper .left{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-main section.getApp .adWrapper .left .text{}
-main section.getApp .adWrapper .left .text h2{
-    color: white;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-main section.getApp .adWrapper .left .text p{
-    color: #cdced0;
-}
-main section.getApp .adWrapper .left .btns{
-    display: flex;
-    gap: 10px;
-}
-.appBtn{
-    background-color: #333D4C;
-    padding: 12px 24px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-.appBtn:hover{
-    background-color: #3F4856;
-}
-main section.getApp .adWrapper .right{
-    width: 60%;
-}
-main section.getApp .adWrapper .right img{
-    width: 100%;
-    height: 100%;
-}
-
-/* Get Finder App - End */
-
-/* common pricing reference */
-main section.commonPricing{
-    width: 100%;
-    background-color: #111827;
-    padding: 20px 60px;
-}
-main section.commonPricing .secContent{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-main section.commonPricing .secContent article a{
-    display: flex;
-    border: #343A47 1px solid;
-    border-radius: 10px;
-    overflow: hidden;
-}
-main section.commonPricing .secContent article a .image{
-    width: 30%;
-    overflow: hidden;
-}
-main section.commonPricing .secContent article a .image img{
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-}
-main section.commonPricing .secContent article a .text{
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    color: white;
-}
-main section.commonPricing .secContent article a .text .description{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-main section.commonPricing .secContent article a .text .description .ratingAndPrice{
-    display: flex;
-    gap: 10px;
-}
-main section.commonPricing .secContent article a .text button{
-    width: 30%;
-    padding: 10px 0px;
-    background-color: #111827;
-    color: white;
-    border : 1px solid white;
-    border-radius: 5px;
-}
-main section.commonPricing .secContent article a .text button:hover{
-    background-color: white;
-    color: black;
-    cursor: pointer;
-}
-main section.commonPricing .secContent article:hover h3{
-    text-decoration: underline;
-}
-main section.commonPricing .secContent article:hover img{
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
-}
-/* Main - End */
-
-/* Footer - Start */
-footer{
-    width: 100%;
-    background-color: #111827;
-    padding: 0px 50px;
-    border-top: 1px solid #343A47;
-}
-
-/*upper - Start */
-footer .upper{
-    padding: 40px 0;
-    border-bottom: 1px solid #343A47;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-footer .upper .left h6,footer .upper .left i{
-    font-size: 20px;
-}
-footer .upper .left{
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-}
-footer .upper .left button{
-    background-color: #d85151;
-    padding: 11px 21px;
-    border-radius: 5px;
-    color: white;
-    border: none;
-}
-footer .upper .left button:hover{
-        background-color: #C92D2D;
-    cursor: pointer;
-}
-
-footer .upper .right{
-    color: #9CA3AF;
-    font-size: 20px;
-    display: flex;
-}
-footer .upper .right span a{
-    color: white;
-    text-decoration: none;
-    margin-left: 10px;
-}
-footer .upper .right span a:hover{
-    text-decoration: underline;
-}
-
-/*upper - End */
-
-/*middle - Start */
-footer .middle{
-    padding: 40px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer .middle .social{
-    width: 40%;
-    /* background-color: red; */
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-footer .middle .social p{
-    color: #9CA3AF;
-}
-footer .middle .social .socialBtns{
-    display: flex;
-    gap: 10px;
-}
-footer .middle .social .socialBtns a{
-    background-color: #333D4C;   
-    width: 30px; 
-    height: 30px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: white;
-}
-footer .middle .social .socialBtns a:hover{
-    background-color: #4E5562;
-}
-footer .middle .links{
-    width: 60%;
-    /* background-color: orange; */
-    display: flex;
-    justify-content: space-around;
-}
-footer .middle .links .popularCategories{
-}
-footer .middle .links .popularCategories h6{
-    color: white;
-    font-size: 20px;
-    /* margin-bottom: 10px; */
-}
-footer .middle .links .popularCategories .lists{
-    display: flex;
-    gap: 20px;
-}
-footer .middle .links .popularCategories .lists ul{
-    list-style: none;
-}
-footer .middle .links .popularCategories .lists ul li{
-    margin: 10px 0;
-}
-footer .middle .links .popularCategories .lists ul li a{
-    color: #9CA3AF;
-}
-footer .middle .links .popularCategories .lists ul li a:hover{
-    color: white;
-    text-decoration: underline;
-}
-footer .middle .links .company{}
-footer .middle .links .company h6{color: white;
-    font-size: 20px;
-    margin-bottom: 10px;}
-footer .middle .links .company ul{list-style: none;}
-footer .middle .links .company ul li{    list-style: none; margin: 10px 0;}
-footer .middle .links .company ul li a{    color: #9CA3AF;
-}
-footer .middle .links .company ul li a:hover{   color: white;
-    text-decoration: underline;}
+    color: var(--color-white);
+}
+main section.pageContent .secContent .item a .icon {
+    background-color: var(--color-dark-3);
+}
+main section.popularProjects {
+    background-color: var(--color-dark-1);
+}
+main section.popularProjects .banner {
+    background-color: var(--color-dark-5);
+}
+main section.popularProjects .banner .text h3 {
+    color: var(--color-white);
+}
+main section.popularProjects .banner .text p {
+    color: var(--color-gray-3);
+}
+main section.popularProjects .banner .text h3 a {
+    color: var(--color-white);
+}
+main section.popularProjects .banner .image {
+    background-color: var(--color-dark-4);
+}
+main section.popularProjects .projectGrid .secContent .project a .projectText {
+    color: var(--color-white);
+}
+.fa-star {
+    color: var(--color-star);
+}
+main section.popularHomeProjects {
+    background-color: var(--color-dark-1);
+}
+main section.popularHomeProjects .secContent .project {
+    background-color: var(--color-dark-1);
+    border: var(--color-gray-border) 1px solid;
+}
+main section.popularHomeProjects .secContent .project a .poster h3 {
+    color: var(--color-white);
+}
+main section.popularHomeProjects .secContent .project a .text {
+    color: var(--color-white);
+}
+main section.popularHomeProjects .secContent .project a .text button {
+    background-color: var(--color-dark-1);
+    border: var(--color-white) 1px solid;
+    color: var(--color-white);
+}
+main section.popularHomeProjects .secContent .project a .text button:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+main section.expertAdvice {
+    background-color: var(--color-dark-5);
+}
+main section.expertAdvice .secContent article .text a {
+    color: var(--color-white);
+}
+main section.expertAdvice .secContent article .text a .tag {
+    background-color: var(--color-dark-3);
+}
+main section.howItWorks {
+    background-color: var(--color-dark-1);
+}
+main section.howItWorks .heading h2 {
+    color: var(--color-white);
+}
+main section.howItWorks .heading p {
+    color: var(--color-gray-2);
+}
+main section.howItWorks .articles article {
+    color: var(--color-white);
+}
+main section.howItWorks .articles article .tex p {
+    color: var(--color-gray-2);
+}
+main section.becomeAPro .left {
+    background-color: var(--color-accent-1);
+}
+main section.becomeAPro .left h2 {
+    color: var(--color-white);
+}
+a.addBusiness {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+a.addBusiness:hover {
+    background-color: var(--color-primary-dark);
+}
+a.learnMore {
+    color: var(--color-white);
+    border: var(--color-white) 1px solid;
+}
+a.learnMore:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+main section.getApp {
+    background-color: var(--color-dark-1);
+}
+main section.getApp .adWrapper {
+    background-color: var(--color-dark-6);
+}
+main section.getApp .adWrapper .left .text h2 {
+    color: var(--color-white);
+}
+main section.getApp .adWrapper .left .text p {
+    color: var(--color-gray-2);
+}
+.appBtn {
+    background-color: var(--color-dark-3);
+    color: var(--color-white);
+}
+.appBtn:hover {
+    background-color: var(--color-hover-dark);
+}
+main section.commonPricing {
+    background-color: var(--color-dark-1);
+}
+main section.commonPricing .secContent article a {
+    border: var(--color-gray-6) 1px solid;
+}
+main section.commonPricing .secContent article a .text {
+    color: var(--color-white);
+}
+main section.commonPricing .secContent article a .text button {
+    background-color: var(--color-dark-1);
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+}
+main section.commonPricing .secContent article a .text button:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+footer {
+    background-color: var(--color-dark-1);
+    border-top: 1px solid var(--color-gray-6);
+}
+footer .upper {
+    border-bottom: 1px solid var(--color-gray-6);
+}
+footer .upper .left {
+    color: var(--color-white);
+}
+footer .upper .left button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+footer .upper .left button:hover {
+    background-color: var(--color-primary-dark);
+}
+footer .upper .right {
+    color: var(--color-gray-4);
+}
+footer .upper .right span a {
+    color: var(--color-white);
+}
+footer .middle .social p {
+    color: var(--color-gray-4);
+}
+footer .middle .social .socialBtns a {
+    background-color: var(--color-dark-3);
+    color: var(--color-white);
+}
+footer .middle .social .socialBtns a:hover {
+    background-color: var(--color-gray-5);
+}
+footer .middle .links .popularCategories h6 {
+    color: var(--color-white);
+}
+footer .middle .links .popularCategories .lists ul li a {
+    color: var(--color-gray-4);
+}
+footer .middle .links .popularCategories .lists ul li a:hover {
+    color: var(--color-white);
+}
+footer .middle .links .company h6 {
+    color: var(--color-white);
+}
+footer .middle .links .company ul li a {
+    color: var(--color-gray-4);
+}
+footer .middle .links .company ul li a:hover {
+    color: var(--color-white);
+}
