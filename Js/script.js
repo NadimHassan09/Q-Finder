@@ -1,5 +1,7 @@
+// bright / dark mode theme
 const root = document.documentElement;
 const btn = document.getElementById("modeToggle");
+
 
 let darkMode = true;
 
@@ -52,3 +54,20 @@ function colorModeToggle(){
 }
 
 btn.addEventListener("click", colorModeToggle);
+
+// nav bar toggle btn
+const navToggleBtn = document.getElementById("navToggleBtn");
+const nav2 = document.getElementById("smallWidth");
+const nav1 = document.getElementById("largerWidth");
+const closeNav = document.getElementById("closeNav");
+
+function navToggle(){
+    if (nav2.style.display == "none"){
+        nav2.style.display = "block";
+    }
+    else{
+        nav2.style.display = "none";
+    }
+}
+navToggleBtn.addEventListener("click",navToggle);
+closeNav.addEventListener("click",navToggle);

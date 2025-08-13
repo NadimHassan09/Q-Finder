@@ -23,14 +23,16 @@
      </div> -->
     <!-- header -->
     <header>
-
+        <!-- nav-btn-toggle -->
+         <div class="navToggle">
+            <button id="navToggleBtn"><i class="fa-solid fa-bars"></i></button>
+         </div>
         <!-- Logo -->
         <div class="logo">
             <span>Q</span> <h2>Finder</h2>
         </div>
-
         <!-- Nav Bar -->
-        <nav>
+        <nav class="largerWidth" id="largerWidth">
             <ul>
                 <li><a href="#"><span>Home</span><i class="fa-solid fa-angle-down"></i></a></li>
                 <li><a href="#"><span>Listings</span><i class="fa-solid fa-angle-down"></i></a></li>
@@ -40,11 +42,28 @@
                 <li><a href="#"><span>Components</span></a></li>
             </ul>
         </nav>
+        <!-- nav Bar for small width screen -->
+         <nav class="smallWidth" id="smallWidth">
+            <div class="leftHalf">
+                <div class="navTitle">
+                    <h4>Browse Finder</h4>
+                    <button id="closeNav">X</button>
+                </div>
+             <ul>
+                <li><a href="#"><span>Home</span><i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#"><span>Listings</span><i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#"><span>Account</span><i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#"><span>Pages</span><i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#"><span>Docs</span></a></li>
+                <li><a href="#"><span>Components</span></a></li>
+            </ul>
+            </div>
+         </nav>
         <!-- member btns -->
         <div class="btns">
             <button id="modeToggle"><i class="fa-solid fa-sun"></i></button>
             <a href="#"><i class="fa-solid fa-user"></i></a>
-            <a href="#" class="joinPro"><i class="fa-solid fa-plus"></i><span>Join Pro Network</span></a>
+            <a href="#" class="joinPro"><i class="fa-solid fa-plus"></i><span class="longBtn">Join Pro Network</span><span class="shortBtn">Join</span></a>
         </div>
     </header>
 
