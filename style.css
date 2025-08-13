@@ -31,6 +31,9 @@
     --download-btn-color-1:#333D4C;
 }
 
+button{
+    cursor: pointer;
+}
 
 
 
