@@ -45,9 +45,56 @@
 }
 /* Reset - End */
 
-
-
-
+#panelToggleBtn2{
+    position: fixed;
+    z-index: 2000;
+    right: 0px;
+    top: 50%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    transform: rotate(-90deg);
+}
+.customizePanel {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    display: none;
+}
+.customizePanel .right{
+    width: calc(100%/3);
+    background-color: var(--color-dark-1);
+    padding: 20px;
+}
+.customizePanel .right .title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--color-text-white);
+    padding-bottom: 20px;
+    border-bottom: 1px var(--color-white) solid;
+    margin-bottom: 20px;
+}
+.customizePanel .right .title button{
+    background-color: var(--color-dark-1);
+    color: var(--color-text-white);
+    border: none;
+    font-size: 22px;
+}
+.customizePanel .right .panel div{
+    display: flex;
+    flex-direction: column;
+}
+.customizePanel .right .panel div h5{
+    font-size: 16px;
+    color: var(--color-text-white);
+    margin-bottom: 10px;
+}
+.customizePanel .right .panel div button{
+    width: 30%;
+}
 
 /* Body - Start */
 body{

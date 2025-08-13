@@ -71,3 +71,31 @@ function navToggle(){
 }
 navToggleBtn.addEventListener("click",navToggle);
 closeNav.addEventListener("click",navToggle);
+
+// customize panel toggle
+
+const customizePanelBtn = document.getElementById("panelToggleBtn");
+const customizePanelBtn2 = document.getElementById("panelToggleBtn2");
+const customizePanel =document.getElementById("customizePanel");
+
+function panelToggle(){
+    if(customizePanel.style.display == "none"){
+        customizePanel.style.display = "flex";
+        customizePanel.style.flexDirection = "row-reverse";
+        customizePanel.style.justifyContent = "flex-start";
+    }
+    else{
+        customizePanel.style.display = "none";
+    }
+}
+customizePanelBtn.addEventListener("click",panelToggle);
+customizePanelBtn2.addEventListener("click",panelToggle);
+
+//taking input from the user
+const colorPicker = document.getElementById("primaryColor");
+const applyColorBtn = document.getElementById("applyColor");
+function colorChange(){
+    let selectedColor = colorPicker.value;
+    root.style.setProperty("--color-accent-1",selectedColor);
+}
+applyColorBtn.addEventListener("click", colorChange);
