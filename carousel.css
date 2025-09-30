@@ -1,0 +1,82 @@
+.carousel{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.cards-container{
+    display: flex;
+    overflow-x: hidden;
+    list-style: none;
+    align-items: center;
+    /* background-color: rgb(70, 16, 206); */
+}
+.carousel-item{
+    flex: 0 0 calc(50%);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+.carousel-controls{
+    /* background-color: teal; */
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.carousel-controls button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: tomato;
+}
+.carousel-controls button:active{
+    background-color: brown;
+}
+
+/* 2nd carousel */
+.carousel_2{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.cards-container_2{
+    display: flex;
+    overflow-x: hidden;
+    list-style: none;
+    align-items: center;
+    /* background-color: rgb(70, 16, 206); */
+}
+.carousel-item_2{
+    flex: 0 0 calc(50%);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+.carousel-item_2 img {
+    width: 100%;
+    display: block;
+}
+.carousel-controls_2{
+    /* background-color: teal; */
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.carousel-controls_2 button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: tomato;
+}
+.carousel-controls_2 button:active{
+    background-color: brown;
+}

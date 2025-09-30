@@ -47,16 +47,19 @@ button{
 
 }
 /* Reset - End */
-
+/* customize panel start */
 #panelToggleBtn2{
+    background-color: var(--color-dark-1);
     position: fixed;
     z-index: 2000;
-    right: -30px;
-    top: 50%;
+    right: -20px;
+    top: 40%;
     padding: 5px 10px;
     border-radius: 10px;
-    border: none;
+    border: var(--color-gray-5) solid 1px;
     transform: rotate(-90deg);
+    font-weight: 300;
+    color: var(--color-text-white);
 }
 .customizePanel {
     position: fixed;
@@ -95,9 +98,32 @@ button{
     color: var(--color-text-white);
     margin-bottom: 10px;
 }
+.customizePanel .right .panel div .color_input{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: var(--color-gray-5) solid 1px;
+    margin-bottom: 10px;
+}
+.customizePanel .right .panel div .color_input input{
+    transform: scale(10);
+}
 .customizePanel .right .panel div button{
     width: 30%;
+    background-color: var(--color-dark-1);
+    color: var(--color-text-white);
+    border: var(--color-gray-5) 1px solid;
+    border-radius: 15px;
+    padding: 10px 5px;
+    margin-top: 10px;
 }
+.customizePanel .right .panel div button:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transition: all 0.3s ease;
+}
+/* Customize Panel End */
 
 /* Body - Start */
 body{
@@ -121,6 +147,8 @@ body{
     color: var(--color-text-white);
 }
 /* logo - End */
+
+
 /* Nav toggle btn start */
 .navToggle button{
     background-color: var(--color-dark-1);
@@ -129,6 +157,8 @@ body{
     font-size: 22px;
 }
 /* Nav toggle btn End */
+
+
 /* Header - Start */
 header{
     width: 100%;
@@ -136,7 +166,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 12px 0;
+    padding: 1rem 1.5rem;
     position: sticky;
     top: 0;
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.4);
@@ -155,6 +185,7 @@ header nav.largerWidth ul li a{
     text-decoration: none;
     color: var(--color-gray-1);
     padding: 10px 20px;
+    transition: all 0.3s ease;
 }
 header nav.largerWidth ul li a span{
     font-size: 20px;
@@ -274,17 +305,23 @@ header .btns a.joinPro:hover i{
 }
 
 /* Buttons - End */
-@media (min-width:1115px){
+@media (min-width:0px) and (max-width:350px) {
+    .shortBtn,.longBtn{
+        display: none;
+    }
+    
+}
+@media (min-width:1161px){
     .smallWidth,.navToggle,.shortBtn{
         display: none;
     }
 }
-@media (min-width:997px) and (max-width:1115px){
+@media (min-width:1025px) and (max-width:1160px){
     .smallWidth,.navToggle,.longBtn,.logo span{
         display: none;
     }
 }
-@media (min-width:0px) and (max-width:997px){
+@media (min-width:0px) and (max-width:1024px){
     .largerWidth,.longBtn,.logo span{
         display: none;
     }
@@ -303,21 +340,78 @@ main section.hero{
     background-color: var(--color-accent-1);
     width: 100%;
     min-height: 100vh;
+    padding: 6rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    position: relative;
+    overflow: hidden;
+
 }
+main section.hero .hero_content{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    z-index: 100;
+}
+main section.hero .img_container {
+    max-width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+main section.hero .img_container img{
+    width: 1780px;
+}
+
 main section.hero h1{
     font-size: 56px;
     color: white;
-    width: 50%;
+    width: 60%;
     text-align: center;
     letter-spacing: 1px;
     word-spacing: 2px;
 }
-main section.hero form{
+@media (min-width:831px) {
+    main section.hero form{
+    min-width: 35rem;
+    background-color: white;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    border-radius: 10px;
+    }
+    main section.hero .popularSearch{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+main section.hero .popularSearch a{
+    max-width: 25%;
+    color: white;
+    border: white 1px solid;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+}
+
+@media (max-width:830px) {
+    main section.hero form{
     width: 60%;
     background-color: white;
     padding: 8px;
@@ -325,7 +419,28 @@ main section.hero form{
     flex-wrap: wrap;
     gap: 5px;
     border-radius: 10px;
+    } 
+    main section.hero .popularSearch{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+main section.hero .popularSearch a{
+    max-width: 60%;
+    color: white;
+    border: white 1px solid;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+}
+
 main section.hero form div {
     /* background-color: var(--color-yellow); */
     position: relative;
@@ -336,7 +451,7 @@ main section.hero form div i{
     left: 10px;
 }
 main section.hero form input{
-    padding: 20px 50px;
+    padding: 20px 0 20px 50px;
     outline: none;
     border: none;
 }
@@ -346,14 +461,15 @@ main section.hero form div.searchBar{
 main section.hero form div.searchBar input{width: 100%;}
 main section.hero form div.locationBar{
     flex-grow: 3;
-    flex-basis: 20%;
+    flex-basis: 25%;
+    min-width: 10rem;
 }
 main section.hero form div.locationBar input{width: 100%;}
 main section.hero form > input{
-    flex-basis: 10%;
+    min-width: 20%;
     flex-grow: 2;
     background-color: var(--color-primary);
-    padding: 5px 10px;
+    padding: 1rem 1.5rem;
     border-radius: 5px;
     color: white;
 }
@@ -361,22 +477,8 @@ main section.hero form > input:hover{
     background-color: var(--color-primary-dark);
     cursor: pointer;
 }
-main section.hero .popularSearch{
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-main section.hero .popularSearch a{
-    color: white;
-    border: white 1px solid;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 10px 0px;
-    flex-grow: 1;
-    text-align: center;
-}
+
+
 main section.hero .popularSearch a:hover{
     background-color: white;
     color: black;
@@ -395,8 +497,10 @@ main section.hero .popularSearch a:hover{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    gap: 10px;
     padding: 20px 0;
     color: var(--color-text-white);
+    margin-bottom: 1rem;
 }
 .secHeader h2{
     font-size: 32px;
@@ -404,86 +508,18 @@ main section.hero .popularSearch a:hover{
 .secHeader a{
     color: var(--color-text-white);
 }
+.secHeader a:hover{
+    text-decoration: underline;
+
+}
 .secHeader a i{
     margin-left: 5px;
 }
 /* section - header - End */
 
 
+  
 
-/* Page Content */
-main section.pageContent{
-    width: 100%;
-    background-color: var(--color-dark-1);
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-main section.pageContent .secHeader{
-    /* background-color: aqua; */
-}
-main section.pageContent .secContent{
-    /* background-color: var(--color-gray-1); */
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    margin: 0 auto;
-}
-main section.pageContent .secContent .item{
-    /* background-color: red; */
-    margin: 10px;
-}
-main section.pageContent .secContent .item a {
-    display: flex;
-    color: var(--color-text-white);
-    align-items: center;
-    gap: 10px;
-}
-main section.pageContent .secContent .item a:hover{
-    text-decoration: underline;
-}
-main section.pageContent .secContent .item a:hover .icon{
-    transform: scale(1.1);
-}
-main section.pageContent .secContent .item a:hover .icon i{
-    text-decoration: none;
-}
-main section.pageContent .secContent .item a .icon{
-    font-size: 24px;
-    background-color: var(--color-dark-3);
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-/*page content - End */
-
-/* popular projects */
-main section.popularProjects{
-    width: 100%;
-    background-color: var(--color-dark-1);
-    display: flex;
-    justify-content: space-between;
-    padding: 50px 40px;
-
-}
-main section.popularProjects .banner{
-    /* background-color: var(--color-dark-5); */
-    background-color: var(--banner-color-dark-1);
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
 main section.popularProjects .banner .text{
     padding: 40px;
 }
@@ -514,21 +550,155 @@ main section.popularProjects .banner .image img{
     position: relative;
     left: 60px;
 }
+
+    
+
+/* Page Content */
+main section.pageContent{
+    width: 100%;
+    background-color: var(--color-dark-1);
+    padding: 4.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+main section.pageContent .secHeader{
+}
+@media (min-width:993px) {
+    main section.pageContent .secContent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto ;
+    margin: 0 auto;
+}
+}
+@media (min-width:769px) and (max-width:992px) {
+    main section.pageContent .secContent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    margin: 0 auto;
+}
+}
+@media (min-width:576px) and (max-width:768px) {
+    main section.pageContent .secContent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    margin: 0 auto;
+}
+}
+
+@media(max-width:575px) {
+    main section.pageContent .secContent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    margin: 0 auto;
+}
+    
+}
+
+main section.popularProjects{
+
+}
+
+@media (min-width:992px) {
+    main section.popularProjects .banner{
+    background-color: var(--banner-color-dark-1);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
 main section.popularProjects .projectGrid{
-    /* background-color: aqua; */
     width: 65%;
 }
-main section.popularProjects .projectGrid .secContent{
+    
+}
+
+@media (max-width:991px) {
+    main section.popularProjects .banner{
+    display: none;
+}
+main section.popularProjects .projectGrid{
+    width: 100%;
+}}
+
+@media (min-width:577px) {
+    main section.popularProjects .projectGrid .secContent{
     display: grid;
-    grid-template-columns: 1FR 1FR;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
+}
+
+@media (max-width:576px) {
+    main section.popularProjects .projectGrid .secContent{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+}
+
+main section.pageContent .secContent .item{
+    margin: 10px;
+}
+main section.pageContent .secContent .item a {
+    display: flex;
+    color: var(--color-text-white);
+    align-items: center;
+    gap: 10px;
+}
+main section.pageContent .secContent .item a:hover span{
+    text-decoration: underline;
+}
+main section.pageContent .secContent .item a:hover .icon{
+    transform: scale(1.1);
+}
+main section.pageContent .secContent .item a:hover .icon i{
+    text-decoration: none !important;
+}
+main section.pageContent .secContent .item a .icon{
+    font-size: 24px;
+    background-color: var(--color-dark-3);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+/*page content - End */
+
+/* popular projects */
+main section.popularProjects{
+    width: 100%;
+    background-color: var(--color-dark-1);
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+
+
+
+
 main section.popularProjects .projectGrid .secContent .project a{
     /* background-color: var(--color-primary-dark); */
     display: flex;
     gap: 20px;
 }
-main section.popularProjects .projectGrid .secContent .project a:hover .projectText h3{
+main section.popularProjects .projectGrid .secContent .project:hover a .projectText h3{
     text-decoration: underline;
 }
 main section.popularProjects .projectGrid .secContent .project a .projectImage{
@@ -541,7 +711,7 @@ main section.popularProjects .projectGrid .secContent .project a .projectImage i
     width: 112px;
     transition: transform 0.5s ease;
 }
-main section.popularProjects .projectGrid .secContent .project a .projectImage img:hover{
+main section.popularProjects .projectGrid .secContent .project:hover a .projectImage img{
     transform: scale(1.1);
     transition: transform 0.5s ease;
 }
@@ -560,22 +730,61 @@ main section.popularProjects .projectGrid .secContent .project a .projectText{
 main section.popularHomeProjects{
     width: 100%;
     background-color: var(--color-dark-1);
-    padding: 50px 40px;
+    padding: 3rem;
 }
-main section.popularHomeProjects .secContent{
+@media (min-width:997px) {
+    main section.popularHomeProjects .secContent{
     width: 100%;
     display: flex;
-    /* background-color: aqua; */
     justify-content: space-between;
-    flex-wrap: wrap;
-   
-}
-main section.popularHomeProjects .secContent .project{
+    flex-wrap: wrap;}  
+
+    main section.popularHomeProjects .secContent .project{
     width: calc(100% / 3 - 15px);
     overflow: hidden;
     background-color: var(--color-dark-1);
     border-radius: 10px;
-    border: var(--color-gray-3) 1px solid;
+    border: var(--color-gray-5) 1px solid;
+}
+    main section.popularHomeProjects .secContent .carousel{
+        display: none;
+    }
+}
+@media (min-width:701px) and (max-width:997px) {
+        main section.popularHomeProjects .secContent > .project{
+    display: none;
+    
+        }
+        main section.popularHomeProjects .secContent .carousel ul li .project{
+    overflow: hidden;
+    background-color: var(--color-dark-1);
+    border-radius: 10px;
+    border: var(--color-gray-5) 1px solid;
+        }
+
+}
+    
+
+@media (max-width:700px) {
+        main section.popularHomeProjects .secContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+        }
+
+    main section.popularHomeProjects .secContent .project{
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-dark-1);
+    border-radius: 10px;
+    border: var(--color-gray-5) 1px solid;
+}
+    main section.popularHomeProjects .secContent .carousel{
+        display: none;
+    }
+    
 }
 main section.popularHomeProjects .secContent .project a{}
 main section.popularHomeProjects .secContent .project a .poster{
@@ -583,7 +792,7 @@ main section.popularHomeProjects .secContent .project a .poster{
 }
 main section.popularHomeProjects .secContent .project a .poster h3{
     position: relative;
-    top: -45px;
+    top: -55px;
     left: 20px;
     font-size: 20px;
     color: white;
@@ -611,7 +820,7 @@ main section.popularHomeProjects .secContent .project a .poster .imageWrapper im
     transition: transform 0.5s ease;
 
 }  
-main section.popularHomeProjects .secContent .project a .poster .imageWrapper img:hover{
+main section.popularHomeProjects .secContent .project:hover a .poster .imageWrapper img{
     transform: scale(1.1);
     transition: transform 0.5s ease;
 
@@ -627,6 +836,7 @@ main section.popularHomeProjects .secContent .project a .text{
 main section.popularHomeProjects .secContent .project a .text .ratingAndPrice{
     display: flex;
     gap: 10px;
+    font-size: 12px;
 }
 main section.popularHomeProjects .secContent .project a .text button{
     padding: 10px 20px;
@@ -634,11 +844,14 @@ main section.popularHomeProjects .secContent .project a .text button{
     border: var(--color-text-white) 1px solid;
     border-radius: 10px;
     color: var(--color-text-white);
+    transition: background-color 0.3s ease , color 0.3s ease;
 }
 main section.popularHomeProjects .secContent .project a .text button:hover{
     background-color: var(--color-white);
     color: var(--color-black);
     cursor: pointer;
+    transition: background-color 0.3s ease , color 0.3s ease;
+
 }
 /* popular home projects end */
 
@@ -646,30 +859,47 @@ main section.popularHomeProjects .secContent .project a .text button:hover{
 main section.expertAdvice{
     width: 100%;
     background-color: var(--color-dark-5);
-    padding: 50px 40px;
+    padding: 3rem;
 }
-main section.expertAdvice .secContent{
-    /* background-color: red; */
+    
+@media (min-width:992px) {
+    main section.expertAdvice .secContent{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-main section.expertAdvice .secContent article{
-    /* background-color: aqua; */
-    display: flex;
     gap: 20px;
 }
 main section.expertAdvice .secContent article .text{
     width: 65%;
     height: 225px;
 }
+    
+}
+@media (max-width:992px) {
+    main section.expertAdvice .secContent{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+main section.expertAdvice .secContent article .text{
+    width: 80%;
+    height: 225px;
+}
+    
+}
+
+main section.expertAdvice .secContent article{
+    display: flex;
+    gap: 20px;
+}
+
 main section.expertAdvice .secContent article .text a{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     color: var(--color-text-white);
-    /* background-color: var(--color-star); */
+    gap: 10px;
 }
 main section.expertAdvice .secContent article .text a .tag{
     /* background-color: var(--color-dark-3); */
@@ -683,15 +913,43 @@ main section.expertAdvice .secContent article .text a .tag{
 main section.expertAdvice .secContent article .text a h3{
     font-size: 20px;
 }
-main section.expertAdvice .secContent article .text a:hover h3{
+main section.expertAdvice .secContent article:hover .text a h3{
     text-decoration: underline;
 } 
+@media (min-width:500px) {
 
-main section.expertAdvice .secContent article .image{}
-main section.expertAdvice .secContent article .image img{
+    main section.expertAdvice .secContent article .image{
+    overflow: hidden;
     border-radius: 10px;
-    width: 130px;
-    height: 150px;
+    max-width: 130px;
+    max-height: 150px;
+    display: flex;
+    justify-content: center;
+
+}
+    
+}
+
+@media (max-width:500px) {
+    main section.expertAdvice .secContent article .image{
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 25%;
+    max-height: 25%;
+    display: flex;
+    justify-content: center;
+
+}
+    
+    
+}
+
+main section.expertAdvice .secContent article .image img{
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+main section.expertAdvice .secContent article:hover .image img{
+    transform: scale(1.04);
 }
 
 /* How It Works */
@@ -713,23 +971,59 @@ main section.howItWorks .heading p{
     font-size: 16px;
     margin-bottom: 10px;
 }
-main section.howItWorks .articles{
+@media (min-width:720px) {
+    main section.howItWorks .articles{
     display: grid;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+    
+}
+@media (max-width:720px) {
+    main section.howItWorks .articles{
+    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
 }
-main section.howItWorks .articles article{
+    
+}
+@media (min-width:1051px) {
+    main section.howItWorks .articles article{
 
     color: var(--color-text-white);
     flex-grow: 1;
 }
+   main section.howItWorks .articles .carousel_2{
+    display: none;
+   }
+
+    
+}
+
+@media (min-width:600px) and (max-width:1050px) {
+   main section.howItWorks .articles >article{
+    display: none;
+}
+    
+}
+@media (max-width:599px) {
+
+   main section.howItWorks .articles .carousel_2{
+    display: none;
+   }
+    
+}
 main section.howItWorks .articles article .image{}
 main section.howItWorks .articles article .image svg{
-    width: 48px;
-    height: 48px;
+    width: 5rem;
+    height: 5rem;
 }
 main section.howItWorks .articles article .tex{
 
@@ -747,33 +1041,40 @@ main section.becomeAPro{
     width: 100%;
     display: flex;
 }
+@media (max-width:992px) {
+main section.becomeAPro .left .btns{
+    display: flex;
+    flex-direction: column;
+}
+main section.becomeAPro .left .btns a{
+    width: 70%;
+}
+}
+
+
 main section.becomeAPro .left{
     background-color: var(--color-accent-1);
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 40px;
+    padding: 3% 0 0 3%;
 
 }
+
 main section.becomeAPro .left h2{
-    width: 60%;
+    width: 70%;
     font-size: 32px;
     color: white;}
-main section.becomeAPro .left .btns{
-    /* width: 60%;
-    background-color: var(--color-primary-dark);
-    display: flex;
-    gap: 20px;
-    justify-content: space-between; */
-}
+
 a.addBusiness{
     background-color: var(--color-primary);
     padding: 11px 21px;
     border-radius: 5px;
     color: white;
     margin-right: 10px;
+    transition: all 0.3s ease;
 }
 a.addBusiness i{
     margin-right: 5px;
@@ -805,18 +1106,40 @@ a.learnMore{
     margin: 10px 0px;
     flex-grow: 1;
     text-align: center;
+    transition: all 0.3s ease;
 }
 a.learnMore:hover{
     background-color: white;
     color: black;
 }
-main section.becomeAPro .right{
+@media (min-width:576px) {
+    
+    main section.becomeAPro .right{
     width: 50%;
 }
 main section.becomeAPro .right img{
     width: 100%;
     height: 100%;
 }
+}
+@media (max-width:576px) {
+    main section.becomeAPro .left{
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main section.becomeAPro .left h2{
+        text-align: center;
+    }
+    main section.becomeAPro .left .btns a{
+    width: 100%;
+}
+    main section.becomeAPro .right{
+        display: none;
+    }
+}
+
 /*Get Finder App*/
 
 main section.getApp{
@@ -828,11 +1151,55 @@ main section.getApp{
     align-items: center;
 
 }
-main section.getApp .adWrapper{
+@media (min-width:820px) {
+    main section.getApp .adWrapper{
     background-color: var(--color-dark-6);
     width: 90%;
     border-radius: 10px;
     display: flex;
+    padding: 0 1rem;
+}
+    main section.getApp .adWrapper .left .btns{
+    display: flex;
+    gap: 10px;
+}
+}
+@media (min-width:567px) and (max-width:820px) {
+    main section.getApp .adWrapper{
+    background-color: var(--color-dark-6);
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+    main section.getApp .adWrapper .left .btns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+}
+@media (min-width:0) and (max-width:567px) {
+    main section.getApp .adWrapper{
+    background-color: var(--color-dark-6);
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+    main section.getApp .adWrapper .left .btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
 }
 main section.getApp .adWrapper .left{
     width: 40%;
@@ -842,7 +1209,6 @@ main section.getApp .adWrapper .left{
     align-items: center;
     gap: 20px;
 }
-main section.getApp .adWrapper .left .text{}
 main section.getApp .adWrapper .left .text h2{
     color: var(--color-text-white);
     font-size: 40px;
@@ -851,18 +1217,44 @@ main section.getApp .adWrapper .left .text h2{
 main section.getApp .adWrapper .left .text p{
     color: var(--color-gray-2);
 }
-main section.getApp .adWrapper .left .btns{
-    display: flex;
-    gap: 10px;
-}
-.appBtn{
-    /* background-color: var(--color-dark-3); */
+
+@media (min-width:776px) {
+    .appBtn{
     background-color: var(--download-btn-color-1);
-    padding: 12px 24px;
+    padding: 10px;
     border-radius: 5px;
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: fit-content;
+
+}}
+@media (max-width:776px) {
+    main section.getApp .adWrapper .left{
+        width: 100%;
+    }
+    main section.getApp .adWrapper .left .text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .appBtn{
+    background-color: var(--download-btn-color-1);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 12rem;
+
+}
+    
 }
 .appBtn:hover{
     background-color: var(--color-hover-dark);
@@ -881,28 +1273,15 @@ main section.getApp .adWrapper .right img{
 main section.commonPricing{
     width: 100%;
     background-color: var(--color-dark-1);
-    padding: 20px 60px;
+    padding: 3rem;
+    height: 100%;
 }
-main section.commonPricing .secContent{
+@media (min-width:776px) {
+    main section.commonPricing .secContent{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-}
-main section.commonPricing .secContent article a{
-    display: flex;
-    border: var(--color-gray-6) 1px solid;
-    border-radius: 10px;
-    overflow: hidden;
-}
-main section.commonPricing .secContent article a .image{
-    width: 30%;
-    overflow: hidden;
-}
-main section.commonPricing .secContent article a .image img{
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
 }
 main section.commonPricing .secContent article a .text{
     width: 70%;
@@ -912,6 +1291,112 @@ main section.commonPricing .secContent article a .text{
     padding: 20px;
     color: var(--color-text-white);
 }
+main section.commonPricing .secContent article a .text button{
+    width: 30%;
+    padding: 10px 0px;
+    background-color: var(--color-dark-1);
+    color: var(--color-text-white);
+    border : 1px solid var(--color-white);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+}
+@media (min-width:500px) and (max-width:776px) {
+    main section.commonPricing .secContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+main section.commonPricing .secContent article a .text{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--color-text-white);
+}
+main section.commonPricing .secContent article a .text button{
+    width: 30%;
+    padding: 10px 0px;
+    background-color: var(--color-dark-1);
+    color: var(--color-text-white);
+    border : 1px solid var(--color-white);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+}
+@media (max-width:500px) {
+    main section.commonPricing .secContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    margin-bottom: 150px;
+}
+main section.commonPricing .secContent article a .text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--color-text-white);
+}
+main section.commonPricing .secContent article a .text button{
+    width: 70%;
+    padding: 10px 0px;
+    background-color: var(--color-dark-1);
+    color: var(--color-text-white);
+    border : 1px solid var(--color-white);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    align-self: center;
+    margin-top: 10px;
+}
+}
+
+main section.commonPricing .secContent article{
+    height: 12rem;
+    display: block;
+}
+@media (min-width:501px) {
+    main section.commonPricing .secContent article a{
+    display: flex;
+    border: var(--color-gray-6) 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+}
+main section.commonPricing .secContent article a .image{
+    width: 40%;
+    overflow: hidden;
+}
+main section.commonPricing .secContent article a .image img{
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+}
+@media (max-width:500px){
+       main section.commonPricing .secContent article a{
+    display: flex;
+    flex-direction: column;
+    border: var(--color-gray-6) 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
+main section.commonPricing .secContent article a .image{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+main section.commonPricing .secContent article a .image img{
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+}
+
+
+
 main section.commonPricing .secContent article a .text .description{
     display: flex;
     flex-direction: column;
@@ -921,14 +1406,7 @@ main section.commonPricing .secContent article a .text .description .ratingAndPr
     display: flex;
     gap: 10px;
 }
-main section.commonPricing .secContent article a .text button{
-    width: 30%;
-    padding: 10px 0px;
-    background-color: var(--color-dark-1);
-    color: var(--color-text-white);
-    border : 1px solid var(--color-white);
-    border-radius: 5px;
-}
+
 main section.commonPricing .secContent article a .text button:hover{
     background-color: var(--color-white);
     color: var(--color-black);
@@ -946,24 +1424,38 @@ main section.commonPricing .secContent article:hover img{
 /* Footer - Start */
 footer{
     width: 100%;
-    background-color: var(--color-dark-1);
+    background-color: #111827;
     padding: 0px 50px;
-    border-top: 1px solid var(--color-gray-6);
+    border-top: 1px solid #343a47;
 }
 
 /*upper - Start */
-footer .upper{
+@media (min-width:776px) {
+  footer .upper{
     padding: 40px 0;
-    border-bottom: 1px solid var(--color-gray-6);
+    border-bottom: 1px solid #343a47;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+}
+@media (max-width:776px) {
+  footer .upper{
+    padding: 40px 0;
+    border-bottom: 1px solid #343a47;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+    
 }
 footer .upper .left h6,footer .upper .left i{
     font-size: 20px;
 }
 footer .upper .left{
-    color: var(--color-white);
+    color: white;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -975,6 +1467,7 @@ footer .upper .left button{
     border-radius: 5px;
     color: white;
     border: none;
+    transition: all 0.3s ease;
 }
 footer .upper .left button:hover{
         background-color: var(--color-primary-dark);
@@ -982,12 +1475,12 @@ footer .upper .left button:hover{
 }
 
 footer .upper .right{
-    color: var(--color-gray-4);
+    color: #9ca3af;
     font-size: 20px;
     display: flex;
 }
 footer .upper .right span a{
-    color: var(--color-white);
+    color: white;
     text-decoration: none;
     margin-left: 10px;
 }
@@ -998,53 +1491,88 @@ footer .upper .right span a:hover{
 /*upper - End */
 
 /*middle - Start */
-footer .middle{
+@media (min-width:776px) {
+ footer .middle{
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+footer .middle .links{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+    
+}
+@media (max-width:776px) {
+ footer .middle{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    
+}
+footer .middle .links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+footer .middle .links .popularCategories{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+footer .middle .links .popularCategories .lists{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+}
+footer .logo span {
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+}
+footer .logo h2{
+    color: white;
+}
 
 footer .middle .social{
     width: 40%;
-    /* background-color: red; */
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 footer .middle .social p{
-    color: var(--color-gray-4);
+    color: #9ca3af;
 }
 footer .middle .social .socialBtns{
     display: flex;
     gap: 10px;
 }
 footer .middle .social .socialBtns a{
-    background-color: var(--color-dark-3);   
+    background-color: #333d4c;   
     width: 30px; 
     height: 30px; 
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: var(--color-white);
+    color: white;
 }
 footer .middle .social .socialBtns a:hover{
     background-color: #4E5562;
 }
-footer .middle .links{
-    width: 60%;
-    /* background-color: orange; */
-    display: flex;
-    justify-content: space-around;
-}
-footer .middle .links .popularCategories{
-}
+
+
 footer .middle .links .popularCategories h6{
-    color: var(--color-white);
+    color: white;
     font-size: 20px;
-    /* margin-bottom: 10px; */
 }
 footer .middle .links .popularCategories .lists{
     display: flex;
@@ -1057,19 +1585,106 @@ footer .middle .links .popularCategories .lists ul li{
     margin: 10px 0;
 }
 footer .middle .links .popularCategories .lists ul li a{
-    color: var(--color-gray-4);
+    color: #9ca3af;
 }
 footer .middle .links .popularCategories .lists ul li a:hover{
-    color: var(--color-white);
+    color: white;
     text-decoration: underline;
 }
 footer .middle .links .company{}
-footer .middle .links .company h6{color: var(--color-white);
+footer .middle .links .company h6{color: white;
     font-size: 20px;
     margin-bottom: 10px;}
 footer .middle .links .company ul{list-style: none;}
 footer .middle .links .company ul li{    list-style: none; margin: 10px 0;}
-footer .middle .links .company ul li a{    color: var(--color-gray-4);
+footer .middle .links .company ul li a{    color: #9ca3af;
 }
 footer .middle .links .company ul li a:hover{   color: white;
     text-decoration: underline;}
+@media (min-width:776px) {
+footer .lower .top_cities{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}    
+}
+@media (max-width:776px) {
+footer .lower .top_cities{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 1.5rem;
+}    
+}
+footer .lower .top_cities h6{
+    font-size: 20px;
+    color: white;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+footer .lower .top_cities div {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    width: 80%;
+}
+footer .lower .top_cities div a{
+    min-width: 10%;
+    max-width: fit-content;
+    color: white;
+    border: #4E5562 1px solid;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 10px 0px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+footer .lower .top_cities div a:hover{
+    background-color: white;
+    color: black;
+}
+@media (min-width:776px) {footer .copyright_payment{
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+}
+footer .copyright_payment .payment{
+    display: flex;
+    gap: 10px;
+}
+}
+@media (max-width:776px) {
+    footer .copyright_payment{
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+
+}
+footer .copyright_payment .payment{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+}
+
+footer .copyright_payment p{
+    color: #9ca3af;
+}
+footer .copyright_payment p a{
+    color: #E5E5E5;
+}
+

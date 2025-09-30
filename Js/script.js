@@ -120,3 +120,69 @@ function colorChange(){
 }
 
 applyColorBtn.addEventListener("click", colorChange);
+
+
+//Slider1 functionality
+let carousel = document.getElementById("carousel");
+let prev = document.getElementById("prev");
+let next = document.getElementById("next");
+let carousel_items = document.getElementsByClassName("carousel-item");
+let index=0;
+let translate=0;
+function next_fn() {
+    if(index==(carousel_items.length-2)){return}
+    for (let item of carousel_items) {
+        translate = -100 *(index+1);
+        item.style.transform = `translateX(${translate}%)`;
+    }
+    index++;
+      console.log(index+" "+translate);
+}
+
+function prev_fn() {
+    if(index==0){return}
+    else{
+        index--;
+        translate += 100;
+        for (let item of carousel_items) {
+        item.style.transform = `translateX(${translate}%)`;
+    }}
+    console.log(index+" "+translate);
+
+}
+
+next.addEventListener("click", next_fn);
+prev.addEventListener("click", prev_fn);
+
+//Slider2 functionality
+let carousel_2 = document.getElementById("carousel_2");
+let prev_2 = document.getElementById("prev_2");
+let next_2 = document.getElementById("next_2");
+let carousel_items_2 = document.getElementsByClassName("carousel-item_2");
+let index_2 = 0;
+let translate_2 = 0;
+
+function next_fn_2() {
+    if(index_2 == (carousel_items_2.length - 2)){ return }
+    for (let item_2 of carousel_items_2) {
+        translate_2 = -100 * (index_2 + 1);
+        item_2.style.transform = `translateX(${translate_2}%)`;
+    }
+    index_2++;
+    console.log(index_2 + " " + translate_2);
+}
+
+function prev_fn_2() {
+    if(index_2 == 0){ return }
+    else {
+        index_2--;
+        translate_2 += 100;
+        for (let item_2 of carousel_items_2) {
+            item_2.style.transform = `translateX(${translate_2}%)`;
+        }
+    }
+    console.log(index_2 + " " + translate_2);
+}
+
+next_2.addEventListener("click", next_fn_2);
+prev_2.addEventListener("click", prev_fn_2);
